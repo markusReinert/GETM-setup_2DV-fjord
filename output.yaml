@@ -1,0 +1,101 @@
+# Flexible output file for the 2D-vertical GETM setup of the 79NG fjord
+#
+# Explanation and template of the file format:
+#
+#<(path and) name of the output file without extension>:
+# use (optional; set to false to disable writing output to this file) [ true (DEFAULT) | false ]
+# time_unit (MANDATORY) [ dt (model timestep) | second | hour | day | month | year ]
+# time_step (MANDATORY; number of time units between output)
+# time_method (optional) [ 0 (time independent) | 1 (instantanuous) | 2 (mean) | 3 (integrated) ]
+# time_reference (optional) [string; DEFAULT: first output time]
+# time_start (optional) [string; DEFAULT: start of simulation]
+# time_stop (optional) [strong; DEFAULT: end of simulation]
+# [i|j|k]_[start|stop|stride] (optional) [global integers]
+# format (optional) [ netcdf (DEFAULT) | text ]
+# sync_interval (optional) [DEFAULT: 1]
+# variables: (MANDATORY; check output of "getm -l" for list of all registered variables)
+# - source: [ * | <varname>,<category>/[ * | <varname>, ... ]
+# - name (optional) [???]
+# - prefix (optional) [???]
+# - postfix (optional) [???]
+# - output_level (optional) [???]
+#
+# Further information on https://getm.eu/flexout/articles/flexout.html
+
+store/out_snapshot:
+  time_method: 1  # treatment of time dimension: instantaneous
+  time_unit: day
+  time_step: 1
+  i_start: 2      # cut off land point at i=1
+  j_start: 2      # cut off land at j=1
+  j_stop: 2       # cut off land at j=3
+  variables:
+  - source: xc
+  - source: yc
+  - source: zc
+  - source: xu
+  - source: hn
+    name: h
+  - source: hun
+    name: hu
+  - source: bathymetry
+  - source: z
+    name: eta
+  - source: rho
+  - source: salt
+  - source: temp
+  - source: velx
+    name: u2d
+  - source: velx3d
+    name: u
+  - source: uu
+  - source: w
+  - source: glacial_ice/*
+    output_level: 32
+  - source: SS
+  - source: NN
+  - source: numdis_3d
+  - source: phydis_3d
+  - source: turbulence/*
+    output_level: 32
+  - source: Tfluxu
+  - source: Sfluxu
+
+store/out_mean:
+  time_method: 2  # treatment of time dimension: mean
+  time_unit: day
+  time_step: 1
+  i_start: 2      # cut off land point at i=1
+  j_start: 2      # cut off land at j=1
+  j_stop: 2       # cut off land at j=3
+  variables:
+  - source: xc
+  - source: yc
+  - source: zc
+  - source: xu
+  - source: hn
+    name: h
+  - source: hun
+    name: hu
+  - source: bathymetry
+  - source: z
+    name: eta
+  - source: rho
+  - source: salt
+  - source: temp
+  - source: velx
+    name: u2d
+  - source: velx3d
+    name: u
+  - source: uu
+  - source: w
+  - source: glacial_ice/*
+    output_level: 32
+  - source: SS
+  - source: NN
+  - source: numdis_3d
+  - source: phydis_3d
+  - source: turbulence/*
+    output_level: 32
+  - source: Tfluxu
+  - source: Sfluxu
