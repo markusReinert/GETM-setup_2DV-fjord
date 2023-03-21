@@ -42,8 +42,9 @@ Hans Burchard (submitted to JAMES, 2023)
 ### Preparation
 
 1. Download this repository and go to the downloaded directory.
-2. Create a sub-directory `bin` and copy the GETM executable to `bin/getm`.
-3. Look at the script [run.sh](run.sh), check the two settings at the
+2. Create the sub-directories `bin` and `store`.
+3. Copy the GETM executable to `bin/getm`.
+4. Look at the script [run.sh](run.sh), check the two settings at the
    beginning of the file, and correct them if needed:
     1. The path `GETMDIR` must point to the code-directory of GETM.
     2. The number of CPU cores in `nCPU` must be available on your computer.

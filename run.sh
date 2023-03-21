@@ -11,13 +11,13 @@
 GETMDIR=$HOME/tools/getm/code/ 
 
 # Choose the number of CPU cores to use
-nCPU=16
+nCPU=4
 
 echo "Creating input files"
 python3 Make_fjord_setup_322.py
 
 echo "Creating namelist files"
-editscenario --schemadir $(GETMDIR)/schemas -e nml . fjord_322.xml
+editscenario --schemadir $GETMDIR/schemas -e nml . fjord_322.xml
 
 echo "Starting GETM ..."
 time mpirun -n $nCPU bin/getm
