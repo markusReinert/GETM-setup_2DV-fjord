@@ -19,7 +19,7 @@ Hans Burchard (submitted to JAMES, 2023)
   see [the GETM website](https://getm.eu/) for compilation instructions
 
 * [Flexible output manager](https://github.com/BoldingBruggeman/flexout)
-  for a simpler handling of the model output
+  for a simplifed handling of the model output
 
 * [Editscenario](https://github.com/BoldingBruggeman/editscenario)
   to create the namelist files
@@ -33,20 +33,22 @@ Hans Burchard (submitted to JAMES, 2023)
 
 ### Preparation
 
-1. Copy the GETM executable to the location bin/getm in the setup-folder.
-2. Look at the script run.sh, check the two settings at the
+1. Download this repository and go to the downloaded directory.
+2. Create a sub-directory `bin` and copy the GETM executable to `bin/getm`.
+3. Look at the script [run.sh](run.sh), check the two settings at the
    beginning of the file, and correct them if needed:
     1. The path `GETMDIR` must point to the code-directory of GETM.
     2. The number of CPU cores in `nCPU` must be available on your computer.
 
 ### Running the simulation
 
-1. Modify the parameters in the file fjord_322.xml for the experiment
-   you want to run or keep them as they are for the default scenario.
-2. Run the script run.sh, for example with `nohup ./run.sh &` to start
-   the model in the background and to keep the model running if you
-   disconnect from the server.
-3. Look at the output files in the store-folder.
+1. Modify the parameters in [fjord_322.xml](fjord_322.xml) for the
+   experiment you want to run,
+   or keep the file as it is for the default scenario.
+2. Run the script [run.sh](run.sh), for example with `nohup ./run.sh &`
+   to start the model in the background and to keep the model running
+   even if you disconnect from the server.
+3. Look at the output files in the folder `store`.
 
 
 ## Description
