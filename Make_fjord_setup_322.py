@@ -245,7 +245,7 @@ stratification = []
 XML_stratification = XML_root.find("fjord/stratification")
 for level in XML_stratification:
     assert level.tag == "level",\
-        f"all elements in stratification must be named 'level', not {child.tag!r}"
+        f"all elements in stratification must be named 'level', not {level.tag!r}"
     z_level = float(level.get("z"))
     S_level = float(level.get("S"))
     T_level = float(level.get("T"))
