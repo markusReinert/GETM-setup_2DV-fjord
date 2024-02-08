@@ -10,16 +10,17 @@ Go to the latest release:
 
 *Please cite the DOI of the version you use.
 The DOI badge above always redirects to the latest version.*
+*Make sure to also **cite the corresponding paper** by
+[Reinert et al. (2023)](https://doi.org/10.1029/2023MS003721).*
 
 
 ## Reference
 
 Markus Reinert, Marvin Lorenz, Knut Klingbeil, Bjarne Büchmann, and
-Hans Burchard: *High-resolution simulations of the plume dynamics in an
-idealized 79°N Glacier cavity using adaptive vertical coordinates.*
-(submitted to JAMES, 2023)
-
-Preprint available at [DOI: 10.22541/essoar.167979227.75015410/v1](https://doi.org/10.22541/essoar.167979227.75015410/v1)
+Hans Burchard (2023): *High-resolution simulations of the plume dynamics
+in an idealized 79°N Glacier cavity using adaptive vertical coordinates.*
+Journal of Advances in Modeling Earth Systems (JAMES), 15, e2023MS003721.
+[DOI: 10.1029/2023MS003721](https://doi.org/10.1029/2023MS003721)
 
 
 ## Instructions to run the model
